@@ -13,13 +13,8 @@ app.use(router);
 
 io.on("connect", (socket) => {
   console.log("got connected!!!");
-  socket.on("join", ({ name, room }, callback) => {
+  socket.on("join", ({ name, room }) => {
     console.log(name, room);
-    //may be we can check something server side
-    const error = true;
-    if (error) {
-      callback({ error: "there was an error detected!" });
-    }
   });
 
   socket.on("disconnect", () => {
