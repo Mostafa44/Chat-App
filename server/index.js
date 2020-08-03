@@ -13,10 +13,15 @@ app.use(router);
 
 io.on("connect", (socket) => {
   console.log("got connected!!!");
+  socket.on("join", ({ name, room }) => {
+    console.log(name, room);
+  });
+
   socket.on("disconnect", () => {
     console.log("disconnected!!!");
   });
 });
+
 server.listen(PORT, () => {
   console.log(`server is up and listening on ${PORT}`);
 });
