@@ -30,12 +30,12 @@ io.on("connect", (socket) => {
     });
 
     callback();
-
-    socket.on("disconnect", () => {
-      console.log("disconnected!!!");
-    });
+  });
+  socket.on("disconnect", () => {
+    console.log("disconnected!!!");
   });
 });
+
 server.listen(PORT, () => {
   console.log(`server is up and listening on ${PORT}`);
 });
